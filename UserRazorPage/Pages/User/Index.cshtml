@@ -1,0 +1,25 @@
+﻿@page "/"
+@model UserRazorPage.Pages.User.IndexModel
+
+<div>
+    <input type="button" value="Add" onclick="window.location.href = '/User/Add'" />
+</div>
+<div>
+    @foreach (var emp in Model.Employee)
+    {
+        <div>
+            <div>
+                <img src="@emp.PhotoPath" alt="Employee Image" />
+            </div>
+            <div>
+                <h2>@emp.FirstName @emp.LastName</h2>
+                <p><span>Email:</span>@emp.Email</p>
+                <p><span>Phone:</span>@emp.Phone</p>
+            </div>
+            <div>
+                <a href="/user/add/?id=@emp.Id">View</a>
+                <a href="/?handler=delete&id=@emp.Id">Delete</a>
+            </div>
+        </div>
+    }
+</div>

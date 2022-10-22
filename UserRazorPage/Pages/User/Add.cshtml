@@ -1,0 +1,36 @@
+﻿@page
+@model UserRazorPage.Pages.Shared.AddModel
+
+<div>
+    <form method="post">
+        <input asp-for="Employee.Id" type="hidden" />
+        <div>
+            <label>Image Url</label>
+            <input asp-for="Employee.PhotoPath" placeholder="Image Url" />
+        </div>
+
+        <div>
+            <label>First Name</label>
+            <input asp-for="Employee.FirstName" placeholder="Firstname" />
+        </div>
+        <div>
+            <label>Last Name</label>
+            <input asp-for="Employee.LastName" placeholder="Lastname" />
+        </div>
+        <div>
+            <label>Email</label>
+            <input asp-for="Employee.Email" type="email" placeholder="johndoe@gmail.com" />
+        </div>
+        <div>
+            <label>Phone</label>
+            <input asp-for="Employee.Phone" placeholder="+994 00 000 00 00" />
+        </div>
+        <div>
+            <input type="submit" value="Submit" />
+        </div>
+        <div>
+            @*Go to index input*@
+            <input type="button" value="Cancel" onclick="window.location.href = '/'" />
+        </div>
+    </form>
+</div>
